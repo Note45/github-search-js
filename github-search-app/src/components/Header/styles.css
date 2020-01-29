@@ -1,0 +1,12 @@
+header#hearder-app {
+  width: 100%;
+  height: 60px;
+  background: #F4A460;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
