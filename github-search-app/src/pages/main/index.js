@@ -18,6 +18,7 @@ export default class Main extends Component {
   }
  
   renderDevs = async () => {
+    //Continuar o render dos dev - APAGAR ESTE COMENTARIO
     await this.searchDevs();
     const { login, avatar_url, location, bio, name } = this.state.dev;
 
