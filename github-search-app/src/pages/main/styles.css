@@ -30,3 +30,16 @@
 #btnBusca:hover {
   background:rgb(247, 206, 168);
 }
+
+#divContainer {
+  padding-left: 10px;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+img {
+  height:300px;
+  width:250px;
+}

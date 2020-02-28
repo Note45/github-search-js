@@ -18,27 +18,44 @@ export default class Main extends Component {
   }
  
   renderDevs = async () => {
-    //Continuar o render dos dev - APAGAR ESTE COMENTARIO
     await this.searchDevs();
-    const { login, avatar_url, location, bio, name } = this.state.dev;
+    const { login, avatar_url, bio, name } = this.state.dev;
 
-    let ulElement = document.getElementById('devs-list');
-    
-    let liElement = document.createElement('li');
-    let textElement = document.createTextNode(bio);
-    liElement.appendChild(textElement);
+    let divContainer = document.getElementById('divContainer');
 
-    ulElement.appendChild(liElement);
+    let imgAvatar = document.createElement('img');
+    imgAvatar.setAttribute('src', avatar_url);
+    imgAvatar.setAttribute('alt', 'Avatar');
 
+    let nameElement = document.createElement('p');
+    let textElement = document.createTextNode(name);
+    nameElement.appendChild(textElement);
+
+    let loginElement = document.createElement('p');
+    textElement = document.createTextNode(login);
+    loginElement.appendChild(textElement);
+
+    let bioElement = document.createElement('p');
+    textElement = document.createTextNode(bio);
+    bioElement.appendChild(textElement);
+
+    divContainer.appendChild(imgAvatar);
+    divContainer.appendChild(nameElement);
+    divContainer.appendChild(loginElement);
+    divContainer.appendChild(bioElement);
   } 
 
   render() {
     return(
-      <div id="divBusca">
+      <div>
+        <div id="divBusca">
         <input type="text" id="txtBusca" placeholder="Buscar..."/>
         <button id="btnBusca" onClick={this.renderDevs}>Buscar</button>
-        <ul id='devs-list'></ul>
+        </div> 
+        <div id='divContainer'>
+        </div>
       </div>
+
     );
   }
 }
