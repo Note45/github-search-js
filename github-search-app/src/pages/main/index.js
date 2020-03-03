@@ -19,30 +19,50 @@ export default class Main extends Component {
  
   renderDevs = async () => {
     await this.searchDevs();
-    const { login, avatar_url, bio, name } = this.state.dev;
+    const { login, avatar_url, bio, name, html_url } = this.state.dev;
 
     let divContainer = document.getElementById('divContainer');
+
+    let containerImage = document.createElement('div');
+    containerImage.setAttribute('id', 'containerImage');
+
+    let containerName = document.createElement('div');
+    containerName.setAttribute('id', 'containerName');
+
+    let buttonElement = document.createElement('button');
+    buttonElement.setAttribute('id', 'buttonElement');
+    buttonElement.setAttribute('onclick', `${html_url}`);
+    buttonElement.setAttribute('target', '_blank');
+    let textElement = document.createTextNode('Acessar');
+    buttonElement.appendChild(textElement);
 
     let imgAvatar = document.createElement('img');
     imgAvatar.setAttribute('src', avatar_url);
     imgAvatar.setAttribute('alt', 'Avatar');
+    imgAvatar.setAttribute('id', 'imgAvatar');
+    containerImage.appendChild(imgAvatar);
 
     let nameElement = document.createElement('p');
-    let textElement = document.createTextNode(name);
+    nameElement.setAttribute('id', 'nameElement');
+    textElement = document.createTextNode(name);
     nameElement.appendChild(textElement);
+    containerName.appendChild(nameElement);
 
     let loginElement = document.createElement('p');
+    loginElement.setAttribute('id', 'loginElement');
     textElement = document.createTextNode(login);
     loginElement.appendChild(textElement);
+    containerName.appendChild(loginElement);
 
     let bioElement = document.createElement('p');
+    bioElement.setAttribute('id', 'bioElement');
     textElement = document.createTextNode(bio);
     bioElement.appendChild(textElement);
+    containerName.appendChild(bioElement);
 
-    divContainer.appendChild(imgAvatar);
-    divContainer.appendChild(nameElement);
-    divContainer.appendChild(loginElement);
-    divContainer.appendChild(bioElement);
+    containerName.appendChild(buttonElement);
+    divContainer.appendChild(containerImage);
+    divContainer.appendChild(containerName);
   } 
 
   render() {
