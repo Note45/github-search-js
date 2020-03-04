@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
 
-import api from '../../services/api';
+import { searchDevs } from '../../services/api';
 import Dev from '../../components/Dev';
 import './styles.css';
 
 export default class Main extends Component {
   state = {
-    dev: {},
+    dev: [],
   }
   
-  searchDevs = async () => {
-    let inputElement = document.getElementById('txtBusca');
+  getDev = async () => {
+   let response = await searchDevs();
 
-    let response = await api.get(`/${inputElement.value}`);
-    this.setState({ dev: response.data });
-    
-  }
- 
-  renderDevs = async () => {
-    await this.searchDevs();
+   this.setState({ dev: [...this.state.dev, response ]});
   } 
 
   render() {
@@ -26,13 +20,12 @@ export default class Main extends Component {
       <div>
         <div id="divBusca">
         <input type="text" id="txtBusca" placeholder="Buscar..."/>
-        <button id="btnBusca" onClick={this.renderDevs}>Buscar</button>
+        <button id="btnBusca" onClick={this.getDev}>Buscar</button>
         {console.log(this.state.dev)}
         </div> 
-        {this.state.dev.login ?
-          <Dev data={this.state.dev} /> : null}
+        {this.state.dev ?
+          this.state.dev.map((value) => (<Dev data={value}/>)) : null}
       </div>
-
     );
   }
 }
