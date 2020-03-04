@@ -31,8 +31,7 @@ export default class Main extends Component {
 
     let buttonElement = document.createElement('button');
     buttonElement.setAttribute('id', 'buttonElement');
-    buttonElement.setAttribute('onclick', `${html_url}`);
-    buttonElement.setAttribute('target', '_blank');
+    buttonElement.setAttribute('onclick', `${window.open(html_url, '_blank')}`);
     let textElement = document.createTextNode('Acessar');
     buttonElement.appendChild(textElement);
 
