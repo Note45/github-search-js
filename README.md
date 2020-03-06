@@ -1,5 +1,5 @@
 # GitHub Search JS
-<p>O projeto Github Search tem como objetivo ser um ambiente de estudo para Java Scrpt  em conjunto com o framework React. O projeto se utiliza da API do GitHub para realizar requisições afim de obter e tratar os dados.<p>
+<p>O projeto Github Search tem como objetivo ser um ambiente de estudo para Javascript  em conjunto com o framework React. O projeto se utiliza da API do GitHub para realizar requisições afim de obter e tratar os dados.<p>
 
 ## Dependências
   <ul>
