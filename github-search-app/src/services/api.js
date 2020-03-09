@@ -9,5 +9,10 @@ export async function searchDevs(){
   
   return response.data;
 }
+export async function getRepos(devName) {
+  let response = await api.get(`/${devName}/repos`);
+
+  return response.data;
+}
 
 export default api;
