@@ -1,0 +1,21 @@
+#name {
+  font-size: 29px;
+}
+
+#descricao {
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+#repoElement button{
+    font-size: 16px;
+    border:none;
+    height:36px;
+    width:300px;
+    font-weight:bold;
+    background:rgb(238, 169, 104);
+}
+
+#repoElement button:hover {
+  background:rgb(247, 206, 168);
+}

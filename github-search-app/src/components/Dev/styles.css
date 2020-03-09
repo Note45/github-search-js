@@ -20,6 +20,18 @@
     grid-row: 1 / span 2;
   }
   
+  #containerReposito {
+    width: 100%;
+    height: max-content;
+    grid-row: 3;
+    grid-column: 1 / span 2;
+  }
+
+  #containerReposito p {
+    padding: 10px;
+    font-size: 32px;
+  }
+  
   #imgAvatar {
     width: 200px;
     height: 210px;

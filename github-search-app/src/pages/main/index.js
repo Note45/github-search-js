@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { searchDevs, getRepos } from '../../services/api';
+import { searchDevs } from '../../services/api';
 import Dev from '../../components/Dev';
 import './styles.css';
 
@@ -21,11 +21,11 @@ export default class Main extends Component {
     return(
       <div>
         <div id="divBusca">
-        <input type="text" id="txtBusca" placeholder="Buscar..."/>
-        <button id="btnBusca" onClick={this.getDev}>Buscar</button>
+          <input type="text" id="txtBusca" placeholder="Buscar..."/>
+          <button id="btnBusca" onClick={this.getDev}>Buscar</button>
         </div> 
         {this.state.dev ?
-          this.state.dev.map((value) => (<Dev data={value}/>)) : null}
+          this.state.dev.map((value) => (<Dev key={value.login} data={value}/>)) : null}
       </div>
     );
   }

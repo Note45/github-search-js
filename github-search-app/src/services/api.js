@@ -9,8 +9,9 @@ export async function searchDevs(){
   
   return response.data;
 }
+
 export async function getRepos(devName) {
-  let response = await api.get(`/${devName}/repos`);
+  let response = await api.get(`/${devName}/repos`).then((value) => value);
 
   return response.data;
 }
